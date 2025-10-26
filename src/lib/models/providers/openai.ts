@@ -156,9 +156,14 @@ class OpenAIProvider extends BaseModelProvider<OpenAIConfig> {
       );
     }
 
+    // GPT-5, o1, o3, o4 series models only support temperature = 1
+    // These reasoning models don't allow custom temperature values
+    const reasoningModels = ['gpt-5', 'gpt-4.1', 'o1', 'o3', 'o4'];
+    const isReasoningModel = reasoningModels.some((prefix) => key.startsWith(prefix));
+
     return new ChatOpenAI({
       apiKey: this.config.apiKey,
-      temperature: 0.7,
+      temperature: isReasoningModel ? 1 : 0.7,
       model: key,
       configuration: {
         baseURL: this.config.baseURL,
