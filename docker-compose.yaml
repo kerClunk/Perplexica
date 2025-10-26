@@ -3,7 +3,6 @@ services:
     image: itzcrazykns1337/perplexica:latest
     ports:
       - '3050:3000'
-      - '8080:8080'
     volumes:
       - data:/home/perplexica/data
       - uploads:/home/perplexica/uploads
