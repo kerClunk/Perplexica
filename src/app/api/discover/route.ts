@@ -2,24 +2,24 @@ import { searchSearxng } from '@/lib/searxng';
 
 const websitesForTopic = {
   ai: {
-    query: ['artificial intelligence', 'machine learning', 'LLM', 'AI research', 'neural networks', 'deep learning'],
-    links: ['openai.com', 'anthropic.com', 'deepmind.google', 'huggingface.co', 'ai.meta.com'],
+    query: ['artificial intelligence', 'machine learning', 'ChatGPT', 'AI research', 'neural networks', 'deep learning'],
+    links: ['techcrunch.com', 'wired.com', 'theverge.com', 'arstechnica.com', 'venturebeat.com'],
   },
   tech: {
     query: ['technology news', 'latest tech', 'science and innovation', 'software development'],
     links: ['techcrunch.com', 'wired.com', 'theverge.com', 'arstechnica.com'],
   },
   opensource: {
-    query: ['open source', 'developer tools', 'GitHub releases', 'software development', 'programming'],
-    links: ['github.blog', 'stackoverflow.blog', 'dev.to', 'thenewstack.io'],
+    query: ['open source', 'developer tools', 'GitHub', 'software development', 'programming'],
+    links: ['techcrunch.com', 'theverge.com', 'arstechnica.com', 'zdnet.com'],
   },
   security: {
     query: ['cybersecurity', 'security vulnerabilities', 'data breaches', 'infosec', 'hacking'],
     links: ['krebsonsecurity.com', 'thehackernews.com', 'bleepingcomputer.com', 'threatpost.com'],
   },
   linux: {
-    query: ['Linux news', 'self-hosting', 'home lab', 'Arch Linux', 'open source servers', 'sysadmin'],
-    links: ['phoronix.com', 'lwn.net', 'linuxiac.com', 'omglinux.com'],
+    query: ['Linux', 'open source', 'Ubuntu', 'server', 'cloud computing'],
+    links: ['arstechnica.com', 'zdnet.com', 'theregister.com', 'techcrunch.com'],
   },
 };
 
