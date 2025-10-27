@@ -92,8 +92,8 @@ export const searchHackerNews = async (
       title: hit.title,
       // Use actual URL if available, otherwise link to HN discussion
       url: hit.url || `https://news.ycombinator.com/item?id=${hit.objectID}`,
-      // Use HN logo as placeholder thumbnail (discover page filters by thumbnail presence)
-      thumbnail: '/hn-logo.svg',
+      // Use HN logo as placeholder thumbnail (must be full URL for Next.js Image component)
+      thumbnail: 'https://news.ycombinator.com/y18.svg',
       // Use story text as content preview, or title as fallback
       content: hit.story_text || hit.title,
       author: hit.author,
@@ -153,7 +153,7 @@ export const searchHackerNewsByDate = async (
     const results: HackerNewsResult[] = data.hits.map((hit) => ({
       title: hit.title,
       url: hit.url || `https://news.ycombinator.com/item?id=${hit.objectID}`,
-      thumbnail: '/hn-logo.png',
+      thumbnail: 'https://news.ycombinator.com/y18.svg',
       content: hit.story_text || hit.title,
       author: hit.author,
       points: hit.points,
