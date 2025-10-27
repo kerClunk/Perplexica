@@ -1,25 +1,25 @@
 import { searchSearxng } from '@/lib/searxng';
 
 const websitesForTopic = {
+  ai: {
+    query: ['artificial intelligence', 'machine learning', 'LLM', 'AI research', 'neural networks', 'deep learning'],
+    links: ['openai.com', 'anthropic.com', 'deepmind.google', 'huggingface.co', 'ai.meta.com'],
+  },
   tech: {
-    query: ['technology news', 'latest tech', 'AI', 'science and innovation'],
-    links: ['techcrunch.com', 'wired.com', 'theverge.com'],
+    query: ['technology news', 'latest tech', 'science and innovation', 'software development'],
+    links: ['techcrunch.com', 'wired.com', 'theverge.com', 'arstechnica.com'],
   },
-  finance: {
-    query: ['finance news', 'economy', 'stock market', 'investing'],
-    links: ['bloomberg.com', 'cnbc.com', 'marketwatch.com'],
+  opensource: {
+    query: ['open source', 'developer tools', 'GitHub releases', 'software development', 'programming'],
+    links: ['github.blog', 'stackoverflow.blog', 'dev.to', 'thenewstack.io'],
   },
-  art: {
-    query: ['art news', 'culture', 'modern art', 'cultural events'],
-    links: ['artnews.com', 'hyperallergic.com', 'theartnewspaper.com'],
+  security: {
+    query: ['cybersecurity', 'security vulnerabilities', 'data breaches', 'infosec', 'hacking'],
+    links: ['krebsonsecurity.com', 'thehackernews.com', 'bleepingcomputer.com', 'threatpost.com'],
   },
-  sports: {
-    query: ['sports news', 'latest sports', 'cricket football tennis'],
-    links: ['espn.com', 'bbc.com/sport', 'skysports.com'],
-  },
-  entertainment: {
-    query: ['entertainment news', 'movies', 'TV shows', 'celebrities'],
-    links: ['hollywoodreporter.com', 'variety.com', 'deadline.com'],
+  linux: {
+    query: ['Linux news', 'self-hosting', 'home lab', 'Arch Linux', 'open source servers', 'sysadmin'],
+    links: ['phoronix.com', 'lwn.net', 'linuxiac.com', 'omglinux.com'],
   },
 };
 
@@ -31,7 +31,7 @@ export const GET = async (req: Request) => {
 
     const mode: 'normal' | 'preview' =
       (params.get('mode') as 'normal' | 'preview') || 'normal';
-    const topic: Topic = (params.get('topic') as Topic) || 'tech';
+    const topic: Topic = (params.get('topic') as Topic) || 'ai';
 
     const selectedTopic = websitesForTopic[topic];
 

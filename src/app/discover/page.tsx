@@ -16,24 +16,24 @@ export interface Discover {
 
 const topics: { key: string; display: string }[] = [
   {
+    display: 'AI & ML',
+    key: 'ai',
+  },
+  {
     display: 'Tech & Science',
     key: 'tech',
   },
   {
-    display: 'Finance',
-    key: 'finance',
+    display: 'Open Source',
+    key: 'opensource',
   },
   {
-    display: 'Art & Culture',
-    key: 'art',
+    display: 'Security',
+    key: 'security',
   },
   {
-    display: 'Sports',
-    key: 'sports',
-  },
-  {
-    display: 'Entertainment',
-    key: 'entertainment',
+    display: 'Linux & Self-Hosting',
+    key: 'linux',
   },
 ];
 
