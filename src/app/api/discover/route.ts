@@ -62,10 +62,13 @@ export const GET = async (req: Request) => {
             }),
           ),
         ),
-        // Fetch HN stories for this topic
+        // Fetch HN stories for this topic (with error handling)
         searchHackerNews(selectedTopic.hnQuery, {
           tags: 'story',
           hitsPerPage: 15, // Get ~15 HN stories to mix in
+        }).catch((err) => {
+          console.error('HN API error:', err);
+          return { results: [] }; // Return empty results on error
         }),
       ]);
 
